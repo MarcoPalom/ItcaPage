@@ -1,26 +1,22 @@
-// ScrollPage.tsx
 import React, { useCallback } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import {ScrollPageProps} from "@/widgets/ParallaxLanding/Interfaces"
-
+import { ScrollPageProps } from "@/widgets/ParallaxLanding/Interfaces";
 import {
   ScrollContainer,
   HorizontalSection,
   gellyAnimation,
   parallaxAnimation,
-  useGlobalState
+  useGlobalState,
 } from "react-nice-scroll";
 import "react-nice-scroll/dist/styles.css";
 
-
-
-const ScrollPage: React.FC<ScrollPageProps> = ({ title, content, images }) => {
+const ScrollPage: React.FC<ScrollPageProps> = ({ title, content, images, backgroundImage, ComponentC }) => {
   const [scroller] = useGlobalState("container");
 
   const addGellyAnimation = useCallback(
     (containerAnimation: gsap.core.Tween) => {
       const items = document.querySelectorAll(
-        ".ns-horizontal-section__item__inner"
+        ".ns-horizontal-section__item__inner",
       ) as NodeListOf<HTMLDivElement>;
 
       items.forEach((item) => {
@@ -42,19 +38,19 @@ const ScrollPage: React.FC<ScrollPageProps> = ({ title, content, images }) => {
                 -20,
                 20,
                 0.8,
-                "power3"
+                "power3",
               );
-          }
+          },
         });
       });
     },
-    []
+    [],
   );
 
   const addParallaxAnimation = useCallback(
     (containerAnimation: gsap.core.Tween) => {
       const items = document.querySelectorAll(
-        ".ns-horizontal-section__item__fig"
+        ".ns-horizontal-section__item__fig",
       ) as NodeListOf<HTMLDivElement>;
 
       items.forEach((trigger) => {
@@ -69,25 +65,21 @@ const ScrollPage: React.FC<ScrollPageProps> = ({ title, content, images }) => {
             "x",
             -30,
             30,
-            containerAnimation
+            containerAnimation,
           );
         }
       });
     },
-    [scroller]
+    [scroller],
   );
 
   return (
     <ScrollContainer>
       <section
-        style={{
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}
+        className="relative flex h-screen items-center justify-center overflow-hidden bg-cover "
+        style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <h1>{title}</h1>
+        <img src={ComponentC} className="h-[48.15%] w-[67,22%]"></img>
       </section>
       <HorizontalSection addAnimation={addGellyAnimation}>
         {content.map((text, index) => (
@@ -101,7 +93,7 @@ const ScrollPage: React.FC<ScrollPageProps> = ({ title, content, images }) => {
           height: "100vh",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <h1>{title} - Section 2</h1>
@@ -115,7 +107,7 @@ const ScrollPage: React.FC<ScrollPageProps> = ({ title, content, images }) => {
                 width: "300px",
                 minWidth: "300px",
                 overflow: "hidden",
-                margin: "0"
+                margin: "0",
               }}
               className="ns-horizontal-section__item__fig"
             >
@@ -124,7 +116,7 @@ const ScrollPage: React.FC<ScrollPageProps> = ({ title, content, images }) => {
                   transform: "scale(1.2)",
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover"
+                  objectFit: "cover",
                 }}
                 src={src}
                 alt={`Image ${index}`}
@@ -138,7 +130,7 @@ const ScrollPage: React.FC<ScrollPageProps> = ({ title, content, images }) => {
           height: "100vh",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <h1>{title} - Section 3</h1>
