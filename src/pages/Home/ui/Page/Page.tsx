@@ -1,12 +1,37 @@
 import { FC } from "react";
 import ScrollPage from "@/widgets/ParallaxLanding/ParallaxLandingPage";
-import {content, images, backgroundImage, ComponentC } from "@/widgets/ParallaxLanding/Content"
+import {
+  content,
+  images, 
+  backgroundImage, 
+  ComponentB, 
+  ComponentM, 
+  ComponentL, 
+  ComponentV, 
+  ComponentSL,
+  ComponentM1,
+  ComponentM2,
+  ComponentM3,
+} from "@/widgets/ParallaxLanding/Content"
 
 
 const Home: FC = () => {
   return (
     <>
-      <ScrollPage title="Welcome to the Scroll Page" content={content} images={images} backgroundImage={backgroundImage} ComponentC={ComponentC} />
+      <ScrollPage
+        title="Welcome to the Scroll Page"
+        content={content}
+        images={images}
+        backgroundImage={backgroundImage}
+        ComponentB= {ComponentB}
+        ComponentM= {ComponentM}
+        ComponentL= {ComponentL}
+        ComponentV= {ComponentV}
+        ComponentSL= {ComponentSL}
+        ComponentM1= {ComponentM1}
+        ComponentM2= {ComponentM2}
+        ComponentM3= {ComponentM3}
+      />
       <section>
         <div className="hero min-h-[calc(100vh-64px)] bg-base-200">
           <div className="hero-content flex-col lg:flex-row">

@@ -1,5 +1,12 @@
 import Bck from "@/images/fondo.jpg"
-import cerro from "@/images/cerro.png"
+import Bail from "@/images/bailarines.png"
+import Masc from '@/images/mascara.png'
+import Logo from '@/images/logo itca.png'
+import Viol from '@/images/violin.png'
+import Sombral from '@/images/sombra logo itca.png'
+import Mar1 from '@/images/mariposa 1.png'
+import Mar2 from '@/images/mariposa 2.png'
+import Mar3 from '@/images/mariposa 3.png'
 
 export const content = [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -14,5 +21,11 @@ export const images = [
   ];
 
   export const backgroundImage = Bck
-  export const ComponentC = cerro
-  
+  export const ComponentB = Bail
+  export const ComponentM = Masc
+  export const ComponentL = Logo
+  export const ComponentV = Viol
+  export const ComponentSL= Sombral
+  export const ComponentM1 = Mar1
+  export const ComponentM2 = Mar2
+  export const ComponentM3 = Mar3
